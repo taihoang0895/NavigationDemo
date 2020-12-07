@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navGraphMainFragment">
+
+    <fragment
+        android:id="@+id/navGraphFragment1"
+        android:name="com.example.navigationdemo.nav_graph.NavGraphFragment1"
+        android:label="fragment_nav_graph1"
+        tools:layout="@layout/fragment_nav_graph_fragment_1" >
+        <action
+            app:popUpTo="@id/navGraphMainFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_navGraphFragment1_to_navGraphFragment2_pop_up_true"
+            app:destination="@id/navGraphFragment2" />
+
+        <action
+            app:popUpTo="@id/navGraphMainFragment"
+            app:popUpToInclusive="false"
+            android:id="@+id/action_navGraphFragment1_to_navGraphFragment2_pop_up_false"
+            app:destination="@id/navGraphFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/navGraphFragment2"
+        android:name="com.example.navigationdemo.nav_graph.NavGraphFragment2"
+        android:label="fragment_nav_graph2"
+        tools:layout="@layout/fragment_nav_graph_fragment_2" />
+    <fragment
+        android:id="@+id/navGraphMainFragment"
+        android:name="com.example.navigationdemo.nav_graph.NavGraphMainFragment"
+        android:label="fragment_nav_graph_main"
+        tools:layout="@layout/fragment_nav_graph_main" >
+        <action
+            android:id="@+id/action_navGraphMainFragment_to_navGraphFragment1"
+            app:destination="@id/navGraphFragment1" />
+    </fragment>
+</navigation>

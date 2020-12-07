@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_primary_args"
+    app:startDestination="@id/navPrimaryArgsMainFragment">
+
+    <fragment
+        android:id="@+id/navPrimaryArgsMainFragment"
+        android:name="com.example.navigationdemo.nav_primary_args.NavPrimaryArgsMainFragment"
+        android:label="fragment_nav_primary_args_main"
+        tools:layout="@layout/fragment_nav_primary_args_main">
+
+        <action
+            android:id="@+id/action_navPrimaryArgsMainFragment_to_navPrimaryArgsFragment2"
+            app:destination="@id/navPrimaryArgsFragment2" />
+        <action
+            android:id="@+id/action_navPrimaryArgsMainFragment_to_navPrimaryArgsFragment1"
+            app:destination="@id/navPrimaryArgsFragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/navPrimaryArgsFragment1"
+        android:name="com.example.navigationdemo.nav_primary_args.NavPrimaryArgsFragment1"
+        android:label="fragment_nav_primary_args1"
+        tools:layout="@layout/fragment_nav_primary_args1">
+        <argument
+            android:name="param1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/navPrimaryArgsFragment2"
+        android:name="com.example.navigationdemo.nav_primary_args.NavPrimaryArgsFragment2"
+        android:label="fragment_nav_primary_args2"
+        tools:layout="@layout/fragment_nav_primary_args2">
+        <argument
+            android:name="param1"
+            app:argType="integer[]" />
+    </fragment>
+
+</navigation>
